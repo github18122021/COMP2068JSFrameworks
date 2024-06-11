@@ -28,7 +28,9 @@
 
 
     {{!-- playing with logo --}}
-    {{!-- noting random idea which i may implement in future: logo bounce like a ball for fewer seconds instead of infinite --}}
+
+    {{!-- if rocket is logo[previous version]: noting random idea which i may implement in future: logo bounce like a ball when hovers for fewer seconds instead of infinite --}}
+
     .logo {
       font-size: 1.6rem;
       font-weight: 900;
@@ -36,6 +38,7 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     }
 
+    {{!-- rocket, note: star emoji as well looks decent --}}
     .logo::before {
       content: '🚀';
       margin-right: 0.5rem;
@@ -98,11 +101,11 @@
           <li><a class="hover:text-green-700 transition-colors duration-200 font-bold"
               href="/">Home</a></li>
           <li><a class="hover:text-green-700 transition-colors duration-200 font-bold"
-              href="/about">About</a></li>
+              href="/about">About Me</a></li>
           <li><a class="hover:text-green-700 transition-colors duration-200 font-bold"
               href="/projects">Projects</a></li>
           <li><a class="hover:text-green-700 transition-colors duration-200 font-bold"
-              href="/contact">Contact</a></li>
+              href="/contact">Contact Me</a></li>
         </ul>
       </section>
     </nav>
@@ -142,7 +145,7 @@
     const path = window.location.pathname;
     const link = document.querySelector(`a[href="${path}"]`);
 
-    {{!-- differentiating list item based on the active page --}}
+    {{!-- adding class on active page --}}
     if (link) {
       link.classList.add('active-link');
     }
