@@ -1,8 +1,10 @@
+
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif; 
 }
 
-a {
-  color: #00B7FF;
-}
+/* Apply Open Sans font to specific elements */
+h1, h2, h3, h4, h5, h6, p {
+  font-family: 'Open Sans', sans-serif;
+} 
