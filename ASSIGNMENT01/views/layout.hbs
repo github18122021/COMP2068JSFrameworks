@@ -8,9 +8,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
     rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  {{!-- <link rel="stylesheet" href="/stylesheets/style.css" /> --}}
+  {{!--
+  <link rel="stylesheet" href="/stylesheets/style.css" /> --}}
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
     body {
@@ -27,9 +30,17 @@
     }
 
 
-    {{!-- playing with logo --}}
+      {
+        {
+        !-- playing with logo --
+      }
+    }
 
-    {{!-- if rocket is logo[previous version]: noting random idea which i may implement in future: logo bounce like a ball when hovers for fewer seconds instead of infinite --}}
+      {
+        {
+        !-- if rocket is logo[previous version]: noting random idea which i may implement in future: logo bounce like a ball when hovers for fewer seconds instead of infinite --
+      }
+    }
 
     .logo {
       font-size: 1.6rem;
@@ -38,7 +49,13 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-    {{!-- rocket, note: star emoji as well looks decent --}}
+      {
+        {
+        !-- rocket,
+        note: star emoji as well looks decent --
+      }
+    }
+
     .logo::before {
       content: '🚀';
       margin-right: 0.5rem;
@@ -77,12 +94,22 @@
       transform-origin: center;
     }
 
-    {{!-- smooth bounce .logo --}}
+      {
+        {
+        !-- smooth bounce .logo --
+      }
+    }
+
     .logo {
       animation: bounce 0.5s ease infinite;
     }
 
-    {{!-- border for active links --}}
+      {
+        {
+        !-- border for active links --
+      }
+    }
+
     .active-link {
       border-bottom: 4px solid #2f855a;
     }
@@ -98,14 +125,26 @@
         <section class="logo text-black">Vraj's Portfolio</section>
         <!-- Navigation Links -->
         <ul class="flex space-x-8 text-lg">
-          <li><a class="hover:text-green-700 transition-colors duration-200 font-bold"
-              href="/">Home</a></li>
-          <li><a class="hover:text-green-700 transition-colors duration-200 font-bold"
-              href="/about">About Me</a></li>
-          <li><a class="hover:text-green-700 transition-colors duration-200 font-bold"
-              href="/projects">Projects</a></li>
-          <li><a class="hover:text-green-700 transition-colors duration-200 font-bold"
-              href="/contact">Contact Me</a></li>
+          <li><a class="hover:text-green-700 transition-colors duration-200 font-bold" href="/">Home</a></li>
+          <li><a class="hover:text-green-700 transition-colors duration-200 font-bold" href="/about">About Me</a></li>
+          <li><a class="hover:text-green-700 transition-colors duration-200 font-bold" href="/projects">Projects</a>
+          </li>
+          <li><a class="hover:text-green-700 transition-colors duration-200 font-bold" href="/contact">Contact Me</a>
+          </li>
+          <ul class="flex space-x-4 justify-center mb-4 text-lg">
+            <li>
+              <a class="hover:text-green-600 transition-colors duration-200 font-bold"
+                href="https://github.com/github18122021">
+                <i class="fab fa-github"></i> <!-- Font Awesome GitHub icon -->
+              </a>
+            </li>
+            <li>
+              <a class="hover:text-green-600 transition-colors duration-200 font-bold"
+                href="https://www.linkedin.com/in/username/">
+                <i class="fab fa-linkedin"></i> <!-- Font Awesome LinkedIn icon -->
+              </a>
+            </li>
+          </ul>
         </ul>
       </section>
     </nav>
@@ -145,7 +184,7 @@
     const path = window.location.pathname;
     const link = document.querySelector(`a[href="${path}"]`);
 
-    {{!-- adding class on active page --}}
+    // Adding active-link class to the current page link
     if (link) {
       link.classList.add('active-link');
     }
@@ -153,5 +192,3 @@
 </body>
 
 </html>
-
-
