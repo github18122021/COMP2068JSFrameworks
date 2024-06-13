@@ -9,10 +9,9 @@ const links = document.querySelectorAll(`#horizontal_nav a`);
 
 links.forEach((link) => {
 
-    if(path.startsWith(link.pathname) && (link.pathname !== "/")) {
-        // console.log(path.length);
-        // console.log(link.pathname.length);
-        // console.log(path, link.pathname)
+    if(path === link.pathname){
+        link.classList.add('active-link');
+    } else if (path.startsWith(link.pathname) && (link.pathname !== "/")) {
         link.classList.add('active-link');
     }
 })
@@ -31,8 +30,10 @@ menuToggle.addEventListener('click', () => {
 // adding "active-link" class based on the current active route 
 
 mobileLinks.forEach((mobileLink) => {
-  if (path.startsWith(mobileLink.pathname) && (mobileLink.pathname !== "/")) {
-    // console.log(mobileLink.href);
+  
+  if(path === mobileLink.pathname){
+    mobileLink.classList.add('active-link');
+  } else if (path.startsWith(mobileLink.pathname) && (mobileLink.pathname !== "/")) {
     mobileLink.classList.add('active-link');
   }
 });
