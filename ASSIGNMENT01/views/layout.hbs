@@ -1,127 +1,39 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{title}} | Vraj's Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
-    rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  {{!--
-  <link rel="stylesheet" href="/stylesheets/style.css" /> --}}
 
+  <title>{{title}} | Vraj's Portfolio</title>
+
+  <!-- Javascript -->
+  <script defer src="/javascripts/script.js"></script>
+
+  <!-- CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="/stylesheets/style.css" /> 
+
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-   <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
+    rel="stylesheet" />
 
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet" />
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_io/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_io/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap"
+    rel="stylesheet" />
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: 'Open Sans', sans-serif;
-    }
-
-
-      {
-        {
-        !-- playing with logo --
-      }
-    }
-
-      {
-        {
-        !-- if rocket is logo[previous version]: noting random idea which i may implement in future: logo bounce like a ball when hovers for fewer seconds instead of infinite --
-      }
-    }
-
-    .logo {
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: #2f855a;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-      {
-        {
-        !-- rocket,
-        note: star emoji as well looks decent --
-      }
-    }
-
-    .logo::before {
-      content: '🚀';
-      margin-right: 0.5rem;
-    }
-
-    .logo::after {
-      content: '🚀';
-      margin-left: 0.5rem;
-    }
-
-    .logo:hover {
-      transform: rotate(360deg);
-    }
-
-    .logo::before {
-      animation: spin 2s linear infinite;
-    }
-
-    .logo::after {
-      animation: spin 2s linear infinite;
-    }
-
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    .logo::before,
-    .logo::after {
-      display: inline-block;
-      transform-origin: center;
-    }
-
-      {
-        {
-        !-- smooth bounce .logo --
-      }
-    }
-
-    .logo {
-      animation: bounce 0.5s ease infinite;
-    }
-
-      {
-        {
-        !-- border for active links --
-      }
-    }
-
-    .active-link {
-      border-bottom: 4px solid #2f855a;
-    }
-  </style>
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  
 </head>
 
 <body class="font-sans bg-gray-50 text-gray-900 flex flex-col min-h-screen">
@@ -131,8 +43,8 @@
       <section class="container mx-auto px-1 py-4 flex justify-between items-center">
         <!-- Logo -->
         <section class="logo text-black">Vraj's Portfolio</section>
-        <!-- Navigation Links -->
-        <ul class="flex space-x-8 text-lg">
+        <!-- Navigation Links: screen > md -->
+        <ul id="horizontal_nav" class="hidden md:flex space-x-8 text-lg">
           <li><a class="hover:text-green-700 transition-colors duration-200 font-bold" href="/">Home</a></li>
           <li><a class="hover:text-green-700 transition-colors duration-200 font-bold" href="/about">About Me</a></li>
           <li><a class="hover:text-green-700 transition-colors duration-200 font-bold" href="/projects">Projects</a>
@@ -143,16 +55,44 @@
             <li>
               <a class="hover:text-green-600 transition-colors duration-200 font-bold"
                 href="https://github.com/github18122021">
-                <i class="fab fa-github"></i> <!-- Font Awesome GitHub icon -->
+                <i class="fab fa-github"></i>
+                <!-- Font Awesome GitHub icon -->
               </a>
             </li>
             <li>
               <a class="hover:text-green-600 transition-colors duration-200 font-bold"
                 href="https://www.linkedin.com/in/vraj-bagadiya-9801b9256/">
-                <i class="fab fa-linkedin"></i> <!-- Font Awesome LinkedIn icon -->
+                <i class="fab fa-linkedin"></i>
+                <!-- Font Awesome LinkedIn icon -->
               </a>
             </li>
           </ul>
+        </ul>
+
+        <!-- menu icon for screen < md -->
+        <div class="md:hidden">
+          <button id="menu-toggle" class="focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+            <!-- Font Awesome bars icon -->
+          </button>
+        </div>
+      </section>
+
+      <!-- menu option to be displayed when the menu icon is clicked && screen < md -->
+      <section id="mobile-menu" class="hidden md:hidden bg-white p-4 shadow-md">
+        <ul class="flex flex-col align-center space-y-4 text-lg">
+          <li><a
+              class="nav-link hover:text-green-700 transition-colors duration-200 font-bold text-center py-2 rounded-md"
+              href="/">Home</a></li>
+          <li><a
+              class="nav-link hover:text-green-700 transition-colors duration-200 font-bold text-center py-2 rounded-md"
+              href="/about">About Me</a></li>
+          <li><a
+              class="nav-link hover:text-green-700 transition-colors duration-200 font-bold text-center py-2 rounded-md"
+              href="/projects">Projects</a></li>
+          <li><a
+              class="nav-link hover:text-green-700 transition-colors duration-200 font-bold text-center py-2 rounded-md"
+              href="/contact">Contact Me</a></li>
         </ul>
       </section>
     </nav>
@@ -163,7 +103,7 @@
     {{{body}}}
   </main>
 
-  {{!-- random idea: whether to add extra info here or not ? --}}
+  {{! random idea: whether to add extra info here or not ? }}
 
   <!-- Footer -->
   <footer class="bg-white shadow-inner py-4">
@@ -173,13 +113,15 @@
         <li>
           <a class="hover:text-blue-600 transition-colors duration-200 font-bold"
             href="https://github.com/github18122021">
-            <i class="fab fa-github"></i> <!-- Font Awesome GitHub icon -->
+            <i class="fab fa-github"></i>
+            <!-- Font Awesome GitHub icon -->
           </a>
         </li>
         <li>
           <a class="hover:text-blue-600 transition-colors duration-200 font-bold"
             href="https://www.linkedin.com/in/vraj-bagadiya-9801b9256/">
-            <i class="fab fa-linkedin"></i> <!-- Font Awesome LinkedIn icon -->
+            <i class="fab fa-linkedin"></i>
+            <!-- Font Awesome LinkedIn icon -->
           </a>
         </li>
       </ul>
@@ -187,21 +129,6 @@
       <p class="text-gray-700">&copy; 2024 Vraj's Portfolio</p>
     </section>
   </footer>
-
-  <script>
-    let path = window.location.pathname;
-    
-    if(path.startsWith("/projects")) {
-      path = "/projects";
-    }
-
-    const link = document.querySelector(`a[href="${path}"]`);
-
-    // Adding active-link class to the current page link
-    if (link) {
-      link.classList.add('active-link');
-    }
-  </script>
 </body>
 
 </html>

@@ -1,10 +1,70 @@
-
-
 body {
-  font-family: 'Roboto', sans-serif; 
+  font-family: 'Roboto', sans-serif;
 }
 
-/* Apply Open Sans font to specific elements */
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Open Sans', sans-serif;
-} 
+}
+
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #2f855a;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.logo::before {
+  content: '🚀';
+  margin-right: 0.5rem;
+}
+
+.logo::after {
+  content: '🚀';
+  margin-left: 0.5rem;
+}
+
+.logo:hover {
+  transform: rotate(360deg);
+}
+
+.logo::before {
+  animation: spin 2s linear infinite;
+}
+
+.logo::after {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform:
+      rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.logo::before,
+.logo::after {
+  display: inline-block;
+  transform-origin: center;
+}
+
+
+.logo {
+  animation: bounce 0.5s ease infinite;
+}
+
+
+.active-link {
+  border-bottom: 4px solid #2f855a;
+}
