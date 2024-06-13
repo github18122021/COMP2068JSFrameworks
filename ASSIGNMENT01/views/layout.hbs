@@ -184,7 +184,12 @@
   </footer>
 
   <script>
-    const path = window.location.pathname;
+    let path = window.location.pathname;
+    
+    if(path.startsWith("/projects")) {
+      path = "/projects";
+    }
+
     const link = document.querySelector(`a[href="${path}"]`);
 
     // Adding active-link class to the current page link
