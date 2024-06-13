@@ -10,9 +10,9 @@ const links = document.querySelectorAll(`#horizontal_nav a`);
 links.forEach((link) => {
 
     if(path.startsWith(link.pathname) && (link.pathname !== "/")) {
-        console.log(path.length);
-        console.log(link.pathname.length);
-        console.log(path, link.pathname)
+        // console.log(path.length);
+        // console.log(link.pathname.length);
+        // console.log(path, link.pathname)
         link.classList.add('active-link');
     }
 })
@@ -36,4 +36,22 @@ mobileLinks.forEach((mobileLink) => {
     mobileLink.classList.add('active-link');
   }
 });
+
+// submission of form in contact section
+
+let contactForm = document.getElementById("contact_form");
+
+contactForm.addEventListener("submit", postData);
+
+function postData(e) {
+    // preventing default behavior
+    e.preventDefault();
+    
+    // future version: sending written message to myself [data backend processing]
+
+    // current version
+    alert("Message has been sent successfully!");
+    contactForm.reset();
+}
+
 
