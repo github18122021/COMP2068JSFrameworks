@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { getBooksFromDatabase, addBook, getBookById, editBook, deleteBook } = require('../controllers/bookController');
 
+// Middleware to check if user is authenticated
 const requireAuth = (req, res, next) => {
     if (req.session.username) {
         next();
@@ -11,6 +12,7 @@ const requireAuth = (req, res, next) => {
 };
 
 // GET Home
+// Fetch all books from the database and render the home page
 router.get('/', requireAuth, async (req, res) => {
     try {
         const searchQuery = req.query.searchQuery || '';
@@ -23,16 +25,19 @@ router.get('/', requireAuth, async (req, res) => {
 });
 
 // GET Add Book
+// Render the add-book page
 router.get('/add-book', requireAuth, (req, res) => {
     res.render('add-book', { title: 'Add a Book', username: req.session.username });
 });
 
 // POST Add Book
+// Add a new book to the database
 router.post('/add-book', requireAuth, async (req, res) => {
     await addBook(req, res);
 });
 
 // GET Edit Book
+// Fetch the book by ID and render the edit-book page
 router.get('/edit-book/:id', requireAuth, async (req, res) => {
     try {
         const book = await getBookById(req.params.id);
@@ -45,6 +50,7 @@ router.get('/edit-book/:id', requireAuth, async (req, res) => {
 });
 
 // POST Edit Book
+// Update the book in the database
 router.post('/edit-book/:id', requireAuth, async (req, res) => {
     try {
         await editBook(req.params.id, req, res);
@@ -56,6 +62,7 @@ router.post('/edit-book/:id', requireAuth, async (req, res) => {
 });
 
 // POST Delete Book
+// Delete the book from the database
 router.post('/delete-book/:id', requireAuth, async (req, res) => {
     try {
         await deleteBook(req.params.id);
@@ -68,6 +75,7 @@ router.post('/delete-book/:id', requireAuth, async (req, res) => {
 });
 
 // GET Logout
+// Destroy the session and redirect to login
 router.get('/logout', (req, res) => {
     req.session.destroy((err) => {
         if (err) {

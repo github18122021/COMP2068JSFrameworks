@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+// User Schema
+// username, email, password
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -21,6 +23,7 @@ const userSchema = new mongoose.Schema({
     }
 });
 
+// users collection in the database
 module.exports = mongoose.model('User', userSchema);
 
 

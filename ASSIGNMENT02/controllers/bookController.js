@@ -1,5 +1,8 @@
 const Book = require('../models/bookModel');
 
+// Get all books from the database
+// Search for books based on the search query
+// Return the books
 const getBooksFromDatabase = async (searchQuery) => {
     let filter = {};
 
@@ -34,9 +37,8 @@ const getBooksFromDatabase = async (searchQuery) => {
 };
 
 
-
-
-
+// Add a new book to the database
+// Redirect to the home page after adding the book
 const addBook = async (req, res) => {
     const { title, author, genre, publisher, published_year, isbn, pages } = req.body;
 
@@ -59,6 +61,8 @@ const addBook = async (req, res) => {
     }
 };
 
+// Get a book by ID
+// Return the book
 const getBookById = async (id) => {
     try {
         const book = await Book.findById(id);
@@ -70,6 +74,8 @@ const getBookById = async (id) => {
     }
 };
 
+// Edit a book by ID
+// Redirect to the home page after editing the book
 const editBook = async (id, req, res) => {
     const { title, author, genre, publisher, published_year, isbn, pages } = req.body;
 
@@ -90,6 +96,7 @@ const editBook = async (id, req, res) => {
     }
 };
 
+// Delete a book by ID
 const deleteBook = async (id) => {
     try {
         await Book.findByIdAndDelete(id);

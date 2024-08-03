@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+// Book Schema
+// title, author, genre, publisher, published_year, isbn, pages
 const bookSchema = new mongoose.Schema({
     title: {
         type: String,
@@ -31,6 +33,7 @@ const bookSchema = new mongoose.Schema({
     }
 });
 
+// books collection in the database
 const Book = mongoose.model('Book', bookSchema);
 
 module.exports = Book;
