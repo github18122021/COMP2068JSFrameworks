@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100">
+
+    <header class="bg-blue-600 text-white shadow">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Library Management System</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="/" class="hover:underline py-2 px-4 rounded">Home</a></li>
+                    <li><a href="/register" class="bg-blue-700 hover:underline py-2 px-4 rounded">Register</a></li>
+                    <li><a href="/login" class="hover:underline py-2 px-4 rounded">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto my-8 p-6 bg-white rounded-lg shadow-md">
+        <h1 class="text-4xl font-semibold mb-4">Register</h1>
+        <p class="text-lg text-gray-700">Create an account to manage your library efficiently.</p>
+
+        {{#if error}}
+        <div class="mb-4 p-4 bg-red-200 text-red-700 rounded">
+            {{error}}
+        </div>
+        {{/if}}
+
+        <form action="/register" method="POST" class="mt-4">
+            <div class="mb-4">
+                <label for="username" class="block text-gray-700">Username</label>
+                <input type="text" id="username" name="username" required class="mt-1 block w-full p-2 border rounded-md" />
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700">Email</label>
+                <input type="email" id="email" name="email" required class="mt-1 block w-full p-2 border rounded-md" />
+            </div>
+            <div class="mb-4">
+                <label for="password" class="block text-gray-700">Password</label>
+                <input type="password" id="password" name="password" required class="mt-1 block w-full p-2 border rounded-md" />
+            </div>
+            <div class="mb-4">
+                <label for="confirmPassword" class="block text-gray-700">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required class="mt-1 block w-full p-2 border rounded-md" />
+            </div>
+            <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded">Register</button>
+        </form>
+    </main>
+
+    <footer class="bg-gray-800 text-white p-4 text-center">
+        <div class="container mx-auto">
+            <p>&copy; 2024 Library Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
