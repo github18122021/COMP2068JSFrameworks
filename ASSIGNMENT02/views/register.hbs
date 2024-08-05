@@ -10,20 +10,20 @@
 <body class="flex flex-col min-h-screen bg-gray-100">
 
     <header class="bg-blue-600 text-white shadow">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-3xl font-bold">Library Management System</h1>
-            <nav>
-                <ul class="flex space-x-6">
-                    <li><a href="/" class="hover:underline py-2 px-4 rounded">Home</a></li>
-                    <li><a href="/register" class="bg-blue-700 hover:underline py-2 px-4 rounded">Register</a></li>
-                    <li><a href="/login" class="hover:underline py-2 px-4 rounded">Login</a></li>
+        <div class="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center">
+            <h1 class="text-2xl md:text-3xl font-bold">Library Management System</h1>
+            <nav class="w-full md:w-auto mt-4 md:mt-0">
+                <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
+                    <li><a href="/" class="hover:underline py-2 px-4 rounded block md:inline-block">Home</a></li>
+                    <li><a href="/register" class="bg-blue-700 hover:underline py-2 px-4 rounded block md:inline-block">Register</a></li>
+                    <li><a href="/login" class="hover:underline py-2 px-4 rounded block md:inline-block">Login</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main class="flex-grow container mx-auto my-8 p-6 bg-white rounded-lg shadow-md">
-        <h1 class="text-4xl font-semibold mb-4">Register</h1>
+        <h1 class="text-3xl md:text-4xl font-semibold mb-4">Register</h1>
         <p class="text-lg text-gray-700">Create an account to manage your library efficiently.</p>
 
         {{#if error}}
@@ -49,7 +49,7 @@
                 <label for="confirmPassword" class="block text-gray-700">Confirm Password</label>
                 <input type="password" id="confirmPassword" name="confirmPassword" required class="mt-1 block w-full p-2 border rounded-md" />
             </div>
-            <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded">Register</button>
+            <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded w-full md:w-auto">Register</button>
         </form>
     </main>
 
