@@ -11,15 +11,19 @@ var app = express();
 
 // Connect to MongoDB
 const mongoose = require('mongoose');
+
+// to read the environment variables
 require('dotenv').config();
 
-console.log(process.env.MONGO_URL);
+// to check if the environment variables are being read
+// console.log(process.env.MONGO_URL);
 
+// Connect to MongoDB
 mongoose.connect(process.env.MONGO_URL)
     .then(() => console.log('MongoDB connected...'))
     .catch(err => console.log(err));
 
-
+// session for user authentication
 const session = require('express-session');
 
 app.use(session({
@@ -39,6 +43,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// routes 
 app.use('/', publicRouter);
 app.use('/lms', privateRouter);
 
