@@ -8,14 +8,14 @@ let {registerUser, loginUser} = require('../controllers/userController');
 // fetch all books from the database and display them
 router.get('/', async function(req, res, next) {
   let books = await getBooksFromDatabase();
-  res.render('index', { title: 'Express', books });
+  res.render('index', { title: 'Home', books });
   // res.render('index', { title: 'Express' });
 });
 
 // GET Register
 // Render the register page
 router.get('/register', function(req, res, next) {
-  res.render('register', { title: 'Express' });
+  res.render('register', { title: 'Register' });
 });
 
 // POST Register
@@ -27,7 +27,7 @@ router.post('/register', async (req, res) => {
 // GET Login
 // Render the login page
 router.get('/login', function(req, res, next) {
-  res.render('login', { title: 'Express' });
+  res.render('login', { title: 'Login' });
 });
 
 // POST Login
