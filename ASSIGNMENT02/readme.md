@@ -9,6 +9,7 @@ The Library Management System is a web application designed for managing books i
 - **User Registration and Login**: Allows users to create accounts and log in.
 - **Book Management**: Enables users to add, edit, view, and delete books.
 - **Session Handling**: Manages user sessions to ensure secure access.
+- **Search Book**: Implemented Additional Search Feature to Search Books.
 
 ## Technologies
 
@@ -20,6 +21,9 @@ The Library Management System is a web application designed for managing books i
 - **Express-Session**: Middleware for managing sessions.
 - **Tailwind CSS**: CSS framework for styling.
 - **EJS**: Templating engine for rendering dynamic HTML views.
+- **dotenv**: Library for loading environment variables from a `.env` file.
+- **Nodemon**: Utility for automatically restarting the server during development.
+- **Tailwind CSS**: CSS framework for styling.
 
 ## Installation
 
