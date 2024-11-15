@@ -27,6 +27,10 @@ router.get('/projects/bookstore', function(req, res, next) {
   res.render('projects/bookstore', { title: 'Book Store'});
 });
 
+router.get('/projects/libraryManagement', function(req, res, next) {
+  res.render('projects/libraryManagement', {title: "Library Management System"});
+})
+
 router.get('/projects/guessGame', function(req, res, next) {
   res.render('projects/guessGame', { title: 'Guess Game'});
 });
